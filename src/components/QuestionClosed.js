@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import seta_play from "../assets/imgs/seta_play.png"
 
 export default function QuestionClosed() {
     return (
         <>
         <QuestionCardClosed>
             <p>Pergunta 7</p>
-            <ion-icon name="play-outline"></ion-icon>
+            <img src = {seta_play} alt="ícone para abrir card"/>
         </QuestionCardClosed>
         </>
     )
@@ -32,11 +33,7 @@ const QuestionCardClosed = styled.div`
         color: #333333;
     }
 
-    ion-icon {
-        font-size: 28px;
-        font-weight: 900;
-        :hover {
-            cursor: pointer;
-        }
+    img:hover {
+        cursor: pointer;
     }
 `

@@ -1,12 +1,14 @@
 import styled from "styled-components"
 import LogoContainer from "./LogoContainer"
 import QuestionsContainer from "./QuestionsContainer"
+import Footer from "./Footer"
 
 export default function ScreenContainer() {
     return (
         <Screen>
             <LogoContainer />
             <QuestionsContainer />
+            <Footer />
         </Screen>
     )
 }
