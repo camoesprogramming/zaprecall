@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import seta_play from "../assets/imgs/seta_play.png"
 
-export default function QuestionClosed() {
+export default function QuestionClosed({questionNumber, setOpenedQuestion}) {
     return (
         <>
         <QuestionCardClosed>
-            <p>Pergunta 7</p>
-            <img src = {seta_play} alt="ícone para abrir card"/>
+            <p>Pergunta {questionNumber+1}</p>
+            <img src = {seta_play} alt="ícone para abrir card" onClick={() => setOpenedQuestion(questionNumber)}/>
         </QuestionCardClosed>
         </>
     )

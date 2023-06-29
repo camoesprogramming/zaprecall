@@ -1,13 +1,17 @@
 import styled from "styled-components";
 import icone_certo from "../assets/imgs/icone_certo.png"
 import icone_erro from "../assets/imgs/icone_erro.png"
+import CARDS from "../assets/CARDS"
 
 export default function Footer() {
     return (
         <>
         <ContainerFooter>
-            <p>4/4 concluidos</p>
+            <p>0/{CARDS.length} concluidos</p>
             <ContainerIcones>
+            <Icons src = {icone_certo}></Icons>
+            <Icons src = {icone_certo}></Icons>
+            <Icons src = {icone_certo}></Icons>
             <Icons src = {icone_certo}></Icons>
             <Icons src = {icone_certo}></Icons>
             <Icons src = {icone_certo}></Icons>

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import seta_virar from "../assets/imgs/seta_virar.png"
 
-export default function QuestionOpenedFrontFace() {
+export default function QuestionOpenedFrontFace({question, setShowedAnswer, questionNumber}) {
     return (
         <>
         <FrontFace>
-            <p>O que é JSX?</p>
-            <img  src={seta_virar} alt="turning arrow"/>
+            <p>{question}</p>
+            <img  src={seta_virar} alt="turning arrow" onClick={() => setShowedAnswer(questionNumber)}/>
         </FrontFace>
         </>
     )

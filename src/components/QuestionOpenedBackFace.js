@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export default function QuestionOpenedBackFace() {
+export default function QuestionOpenedBackFace({answer}) {
     
     return (
         <>
             <BackFace>
-                <p>JSX é uma sintaxe para escrever HTML dentro do JS</p>
+                <p>{answer}</p>
                 <ButtonsContainer>
                     <Button color = {'#FF3030'}>Não Lembrei</Button>
                     <Button color = {'#FF922E'}>Quase não lembrei</Button>
