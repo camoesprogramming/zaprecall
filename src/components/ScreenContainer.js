@@ -2,14 +2,34 @@ import styled from "styled-components"
 import LogoContainer from "./LogoContainer"
 import QuestionsContainer from "./QuestionsContainer"
 import Footer from "./Footer"
+import {useState} from "react"
 
 
 export default function ScreenContainer() {
+    const [correctAnswer, setCorrectAnswer] = useState([])
+    const [almostAnswer, setAlmostAnswer] = useState([])
+    const [wrongAnswer, setWrongAnswer] = useState([])
+    const [answered, setAnswered] = useState([])
+
     return (
         <Screen>
             <LogoContainer />
-            <QuestionsContainer  />
-            <Footer />
+            <QuestionsContainer
+            correctAnswer = {correctAnswer}
+            setCorrectAnswer = {setCorrectAnswer}
+            almostAnswer = {almostAnswer}
+            setAlmostAnswer = {setAlmostAnswer}
+            wrongAnswer = {wrongAnswer}
+            setWrongAnswer = {setWrongAnswer}
+            answered = {answered}
+            setAnswered = {setAnswered}
+            />
+            <Footer
+             correctAnswer = {correctAnswer}
+             almostAnswer = {almostAnswer}
+             wrongAnswer = {wrongAnswer}
+             answered = {answered}
+             />
         </Screen>
     )
 }

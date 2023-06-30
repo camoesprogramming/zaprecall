@@ -2,6 +2,7 @@ import styled from "styled-components";
 import seta_virar from "../assets/imgs/seta_virar.png"
 
 export default function QuestionOpenedFrontFace({question, setShowedAnswer, questionNumber}) {
+    
     return (
         <>
         <FrontFace>
@@ -35,5 +36,9 @@ const FrontFace = styled.div`
         position: absolute;
         bottom: 10px;
         right: 10px;
+    }
+
+  > img:hover {
+        cursor: pointer;
     }
 `

@@ -1,15 +1,37 @@
 import styled from "styled-components";
 
-export default function QuestionOpenedBackFace({answer}) {
+export default function QuestionOpenedBackFace({answer, questionNumber, correctAnswer, setCorrectAnswer, almostAnswer, setAlmostAnswer,wrongAnswer, setWrongAnswer, answered, setAnswered, setOpenedQuestion}) {
+    
+    function verifyAnswer(buttonClicked) {
+        if (buttonClicked === 1) {
+            const newNumbers = [...correctAnswer,questionNumber]
+            setCorrectAnswer(newNumbers)
+        }
+        
+        if (buttonClicked === 2) {
+            const newNumbers = [...almostAnswer,questionNumber]
+            setAlmostAnswer(newNumbers)
+        }
+
+        if (buttonClicked === 3) {
+            const newNumbers = [...wrongAnswer,questionNumber]
+            setWrongAnswer(newNumbers)
+        }
+
+        const answeredQuestions = [...answered, questionNumber];
+        setAnswered(answeredQuestions)
+        setOpenedQuestion(-1)
+
+    }
     
     return (
         <>
             <BackFace>
                 <p>{answer}</p>
                 <ButtonsContainer>
-                    <Button color = {'#FF3030'}>Não Lembrei</Button>
-                    <Button color = {'#FF922E'}>Quase não lembrei</Button>
-                    <Button color = {'#2FBE34'}>ZAP!</Button>
+                    <Button color = {'#FF3030'} onClick={() => verifyAnswer(3)}>Não Lembrei</Button>
+                    <Button color = {'#FF922E'} onClick={() => verifyAnswer(2)}>Quase não lembrei</Button>
+                    <Button color = {'#2FBE34'} onClick={() => verifyAnswer(1)}>ZAP!</Button>
                 </ButtonsContainer>
             </BackFace>
         </>
@@ -58,4 +80,8 @@ const Button = styled.button`
         border-radius: 5px;
         border: 1px solid ${props => props.color};
         padding: 5px;
+
+        :hover {
+            cursor: pointer;
+        }
 `
